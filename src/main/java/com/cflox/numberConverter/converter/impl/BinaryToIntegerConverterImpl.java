@@ -1,13 +1,14 @@
 package com.cflox.numberConverter.converter.impl;
 
 import com.cflox.numberConverter.converter.IIntegerConverter;
+import com.cflox.numberConverter.util.BeanNameUtil;
 import org.springframework.stereotype.Component;
 
 /**
  * @author tatmaca
  */
 
-@Component("BinaryConverter")
+@Component(BeanNameUtil.BINARY)
 public class BinaryToIntegerConverterImpl implements IIntegerConverter {
 
     @Override

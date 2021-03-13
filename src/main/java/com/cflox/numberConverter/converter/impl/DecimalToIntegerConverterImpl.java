@@ -1,13 +1,14 @@
 package com.cflox.numberConverter.converter.impl;
 
 import com.cflox.numberConverter.converter.IIntegerConverter;
+import com.cflox.numberConverter.util.BeanNameUtil;
 import org.springframework.stereotype.Component;
 
 /**
  * @author tatmaca
  */
 
-@Component("DecimalConverter")
+@Component(BeanNameUtil.DECIMAL)
 public class DecimalToIntegerConverterImpl implements IIntegerConverter {
 
     @Override

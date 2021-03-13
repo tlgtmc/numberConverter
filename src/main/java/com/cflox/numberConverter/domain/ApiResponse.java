@@ -1,6 +1,8 @@
 package com.cflox.numberConverter.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 /**
@@ -15,10 +17,17 @@ import org.springframework.http.HttpStatus;
  * @author tatmaca
  */
 
+@NoArgsConstructor
 @Data
 public class ApiResponse {
 
-    private String number;
+    private String value;
     private HttpStatus httpStatus;
+    private int httpStatusCode;
 
+    public ApiResponse(String value, HttpStatus httpStatus, int httpStatusCode) {
+        this.value = value;
+        this.httpStatus = httpStatus;
+        this.httpStatusCode = httpStatusCode;
+    }
 }

@@ -1,14 +1,15 @@
 package com.cflox.numberConverter.enums;
 
-import lombok.Data;
+
+import com.cflox.numberConverter.util.BeanNameUtil;
 
 /**
  * @author tatmaca
  */
 
 public enum NumberType {
-    BINARY("BinaryConverter"),
-    DECIMAL("DecimalConverter");
+    BINARY(BeanNameUtil.BINARY),
+    DECIMAL(BeanNameUtil.DECIMAL);
 
     private String beanName;
 
