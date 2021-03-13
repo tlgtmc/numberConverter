@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Number To Roman Converter
+
+server:
+  port: 7101
