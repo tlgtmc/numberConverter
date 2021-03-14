@@ -5,6 +5,7 @@ import com.cflox.numberConverter.enums.OutputNumberType;
 import lombok.Data;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  * {@code NumberConverterRequestDto} is request Dto to call the endpoint
@@ -20,11 +21,12 @@ import javax.validation.Valid;
 @Data
 public class NumberConverterRequestDto {
 
+    @NotNull
     private String number;
 
-    @Valid
+    @NotNull
     private InputNumberType inputNumberType;
 
-    @Valid
+    @NotNull
     private OutputNumberType outputNumberType;
 }
