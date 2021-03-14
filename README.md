@@ -10,13 +10,17 @@ Currently, the application provides a GET method with the following endpoint:
 
     localhost:7101/convert/to/roman
 
-Request body object:
+Request param dto:
 
     {
         "number": "10",
         "inputNumberType": "DECIMAL",
         "outputNumberType": "ROMAN"
     }
+
+Example URL:
+
+    localhost:7101/convert/to/roman?number=10&inputNumberType=DECIMAL&outputNumberType=ROMAN
 
 ## Supported Input & Output Types:
 
