@@ -1,0 +1,36 @@
+Configuration:
+  status: info
+
+  appenders:
+    Console:
+      name: Console_Appender
+      PatternLayout:
+        Pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+    File:
+      - name: File_Appender
+        fileName: logs/app.log
+        filePattern: "logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 10MB
+        DefaultRollOverStrategy:
+          max: 10
+
+  Loggers:
+
+    Root:
+      level: error
+      AppenderRef:
+        ref: Console_Appender
+
+    logger:
+      - name: com.cflox
+        level: debug
+        additivity: false
+        AppenderRef:
+          - ref: Console_Appender
+          - ref: File_Appender
+            level: info
