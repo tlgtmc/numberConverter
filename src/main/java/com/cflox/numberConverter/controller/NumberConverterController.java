@@ -4,10 +4,8 @@ import com.cflox.numberConverter.domain.ApiResponse;
 import com.cflox.numberConverter.domain.dto.NumberConverterRequestDto;
 import com.cflox.numberConverter.service.INumberConverterService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * NumberConverterController is a RestController class with mapping {@code "/convert/to"}
@@ -28,7 +26,7 @@ public class NumberConverterController {
     /**
      * {@code convertToRoman} method converts requested number to Roman representation
      *
-     * @param numberConverterRequestDto : Request Dto includes a value and type
+     * @param numberConverterRequestDto : Dto with value, inputNumberType and outputNumberType
      * @return ApiResponse : Custom model with following fields value, httpStatus and httpStatusCode
      *
      */

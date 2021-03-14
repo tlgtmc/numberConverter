@@ -4,19 +4,18 @@ package com.cflox.numberConverter.enums;
 import com.cflox.numberConverter.util.BeanNameUtil;
 
 /**
- * Enum representation of supported conversion types.
+ * Enum representation of supported output type(s).
  * Each declaration contains bean name, which is declared in BeanNameUtil class
  *
  * @author tatmaca
  */
 
-public enum NumberType {
-    BINARY(BeanNameUtil.BINARY),
-    DECIMAL(BeanNameUtil.DECIMAL);
+public enum OutputNumberType {
+    ROMAN(BeanNameUtil.ROMAN);
 
     private String beanName;
 
-    NumberType(String beanName) {
+    OutputNumberType(String beanName) {
         this.beanName = beanName;
     }
 

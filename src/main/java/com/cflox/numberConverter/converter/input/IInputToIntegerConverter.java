@@ -1,4 +1,4 @@
-package com.cflox.numberConverter.converter;
+package com.cflox.numberConverter.converter.input;
 
 /**
  * This interface is being used by classes that converts values to Integer
@@ -6,6 +6,6 @@ package com.cflox.numberConverter.converter;
  * @author tatmaca
  */
 
-public interface IIntegerConverter {
+public interface IInputToIntegerConverter {
     int convert(String number);
 }

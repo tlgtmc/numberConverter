@@ -1,6 +1,7 @@
 package com.cflox.numberConverter.domain.dto;
 
-import com.cflox.numberConverter.enums.NumberType;
+import com.cflox.numberConverter.enums.InputNumberType;
+import com.cflox.numberConverter.enums.OutputNumberType;
 import lombok.Data;
 
 import javax.validation.Valid;
@@ -21,5 +22,8 @@ public class NumberConverterRequestDto {
     private String number;
 
     @Valid
-    private NumberType numberType;
+    private InputNumberType inputNumberType;
+
+    @Valid
+    private OutputNumberType outputNumberType;
 }

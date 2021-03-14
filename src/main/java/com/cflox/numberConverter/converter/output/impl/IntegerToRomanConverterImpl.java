@@ -1,20 +1,20 @@
-package com.cflox.numberConverter.converter.impl;
+package com.cflox.numberConverter.converter.output.impl;
 
-import com.cflox.numberConverter.converter.IRomanConverter;
+import com.cflox.numberConverter.converter.output.IIntegerToOutputConverter;
 import com.cflox.numberConverter.domain.RomanNumber;
-import com.cflox.numberConverter.exception.InvalidInputException;
 import com.cflox.numberConverter.exception.NumberOutOfRangeException;
+import com.cflox.numberConverter.util.BeanNameUtil;
 import org.springframework.stereotype.Component;
 
 /**
- * {@code IntegerToRomanConverterImpl} implements {@code IRomanConverter}
+ * {@code IntegerToRomanConverterImpl} implements {@code IIntegerToOutputConverter}
  * Converts incoming Integer number to Roman Number representation
  *
  * @author tatmaca
  */
 
-@Component()
-public class IntegerToRomanConverterImpl implements IRomanConverter {
+@Component(BeanNameUtil.ROMAN)
+public class IntegerToRomanConverterImpl implements IIntegerToOutputConverter {
 
     /**
      * {@code convert} converts Integer to Roman Number representation

@@ -1,6 +1,6 @@
-package com.cflox.numberConverter.converter.impl;
+package com.cflox.numberConverter.converter.input.impl;
 
-import com.cflox.numberConverter.converter.IIntegerConverter;
+import com.cflox.numberConverter.converter.input.IInputToIntegerConverter;
 import com.cflox.numberConverter.exception.InvalidInputException;
 import com.cflox.numberConverter.util.BeanNameUtil;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component(BeanNameUtil.BINARY)
-public class BinaryToIntegerConverterImpl implements IIntegerConverter {
+public class BinaryToIntegerConverterImpl implements IInputToIntegerConverter {
 
     /**
      * {@code convert} converts binary number to integer representation
