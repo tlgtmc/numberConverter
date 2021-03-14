@@ -13,6 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 /**
+ * Service layer of the NumberConverter application.
+ * This class implements the INumberConverterService.
+ *
  * @author tatmaca
  */
 
@@ -23,6 +26,16 @@ public class NumberConverterServiceImpl implements INumberConverterService {
     private final ApplicationContext applicationContext;
     private final IRomanConverter romanConverter;
 
+    /**
+     * {@code convertToRoman} method converts given request object value to the roman value.
+     * It determines which conversion type will be used with the help of ApplicationContext.
+     * Pre-defined bean names used to get beans from ApplicationContext.
+     * Bean's convert method is called and integer representation of given value stored in a value.
+     * Last step is converting this integer value to the roman representation with RomanConverter bean.
+     *
+     * @param requestDto : NumberConverterRequestDto with value and type
+     * @return : {@code ApiResponse} with converted value, status and statusCode
+     */
     @Override
     public ApiResponse convertToRoman(NumberConverterRequestDto requestDto) {
         IIntegerConverter numberConverter = (IIntegerConverter) applicationContext.getBean(requestDto.getNumberType().getBeanName());

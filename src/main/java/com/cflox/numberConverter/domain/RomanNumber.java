@@ -3,6 +3,11 @@ package com.cflox.numberConverter.domain;
 import java.util.TreeMap;
 
 /**
+ * {@code RomanNumber} is RomanNumber representation class.
+ *
+ * <p>It includes the roman representation of specific numbers.
+ * Each one stored in a TreeMap, because keys are stored by natural order.</p>
+ *
  * @author tatmaca
  */
 
@@ -26,6 +31,12 @@ public class RomanNumber {
         map.put(1, "I");
     }
 
+    /**
+     * {@code from} method converts given integer value to the roman value
+     *
+     * @param number : value to be converted
+     * @return : Roman representation of given number
+     */
     public final static String from(int number) {
         int l =  map.floorKey(number);
         if ( number == l ) {

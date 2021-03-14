@@ -1,8 +1,9 @@
 package com.cflox.numberConverter.converter;
 
 /**
+ * This interface is being used by classes that converts values to Integer
+ *
  * @author tatmaca
- * @date 3/13/21
  */
 
 public interface IIntegerConverter {

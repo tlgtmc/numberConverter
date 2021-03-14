@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
+ * This class is contains advices for Exceptions
+ *
  * @author tatmaca
  */
 

@@ -1,6 +1,8 @@
 package com.cflox.numberConverter.exception;
 
 /**
+ * This {@code RuntimeException} throws when input is out of range
+ *
  * @author tatmaca
  */
 

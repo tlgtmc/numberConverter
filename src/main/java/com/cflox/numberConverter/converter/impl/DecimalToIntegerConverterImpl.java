@@ -6,12 +6,22 @@ import com.cflox.numberConverter.util.BeanNameUtil;
 import org.springframework.stereotype.Component;
 
 /**
+ * {@code DecimalToIntegerConverterImpl} implements {@code IIntegerConverter}
+ * Converts incoming Decimal number to Integer value
+ *
  * @author tatmaca
  */
 
 @Component(BeanNameUtil.DECIMAL)
 public class DecimalToIntegerConverterImpl implements IIntegerConverter {
 
+    /**
+     * {@code convert} converts decimal number to integer representation
+     *
+     * @param number : value to be converted
+     * @return : Integer representation of given decimal number
+     * @throws InvalidInputException if input is not a valid decimal
+     */
     @Override
     public int convert(String number) {
         try {

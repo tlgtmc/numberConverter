@@ -6,12 +6,22 @@ import com.cflox.numberConverter.util.BeanNameUtil;
 import org.springframework.stereotype.Component;
 
 /**
+ * {@code BinaryToIntegerConverterImpl} implements {@code IIntegerConverter}
+ * Converts incoming Binary number to Integer value
+ *
  * @author tatmaca
  */
 
 @Component(BeanNameUtil.BINARY)
 public class BinaryToIntegerConverterImpl implements IIntegerConverter {
 
+    /**
+     * {@code convert} converts binary number to integer representation
+     *
+     * @param number : value to be converted
+     * @return : Integer representation of given binary number
+     * @throws InvalidInputException if input is not a valid binary
+     */
     @Override
     public int convert(String number) {
         try {

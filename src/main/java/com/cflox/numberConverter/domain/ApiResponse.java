@@ -10,8 +10,9 @@ import org.springframework.http.HttpStatus;
  * Response object of the application
  * consists the following fields:
  *
- * number,
+ * number
  * httpStatus
+ * httpStatusCode
  *
  * @author tatmaca
  */

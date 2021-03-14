@@ -4,6 +4,9 @@ package com.cflox.numberConverter.enums;
 import com.cflox.numberConverter.util.BeanNameUtil;
 
 /**
+ * Enum representation of supported conversion types.
+ * Each declaration contains bean name, which is declared in BeanNameUtil class
+ *
  * @author tatmaca
  */
 
