@@ -10,11 +10,12 @@ package com.cflox.numberConverter.util;
 
 public class BeanNameUtil {
 
-
     // Input type bean names
     public static final String BINARY   = "BinaryToIntegerConverterBean";
     public static final String DECIMAL  = "DecimalToIntegerConverterBean";
 
     // Output type bean names
     public static final String ROMAN    = "IntegerToRomanConverterBean";
+
+    private BeanNameUtil(){}
 }

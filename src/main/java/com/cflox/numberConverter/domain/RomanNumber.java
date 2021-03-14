@@ -13,7 +13,7 @@ import java.util.TreeMap;
 
 public class RomanNumber {
 
-    private final static TreeMap<Integer, String> map = new TreeMap<>();
+    private static final TreeMap<Integer, String> map = new TreeMap<>();
 
     static {
         map.put(1000, "M");
@@ -31,13 +31,16 @@ public class RomanNumber {
         map.put(1, "I");
     }
 
+    private RomanNumber() {
+    }
+
     /**
      * {@code from} method converts given integer value to the roman value
      *
      * @param number : value to be converted
      * @return : Roman representation of given number
      */
-    public final static String from(int number) {
+    public static final String from(int number) {
         int l =  map.floorKey(number);
         if ( number == l ) {
             return map.get(number);

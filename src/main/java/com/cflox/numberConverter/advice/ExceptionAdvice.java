@@ -23,23 +23,20 @@ public class ExceptionAdvice {
     @ExceptionHandler(NumberOutOfRangeException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public final ApiResponse numberOutOfRangeException(NumberOutOfRangeException ex) {
-        var apiResponse = new ApiResponse(ex.getMessage(), HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.value());
-        return apiResponse;
+        return new ApiResponse(ex.getMessage(), HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.value());
     }
 
     @ResponseBody
     @ExceptionHandler(InvalidInputException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public final ApiResponse invalidInputException(InvalidInputException ex) {
-        var apiResponse = new ApiResponse(ex.getMessage(), HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.value());
-        return apiResponse;
+        return new ApiResponse(ex.getMessage(), HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.value());
     }
 
     @ResponseBody
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public final ApiResponse MessageNotReadableException(HttpMessageNotReadableException ex) {
-        var apiResponse = new ApiResponse(ex.getMostSpecificCause().getLocalizedMessage(), HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.value());
-        return apiResponse;
+    public final ApiResponse messageNotReadableException(HttpMessageNotReadableException ex) {
+        return new ApiResponse(ex.getMostSpecificCause().getLocalizedMessage(), HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.value());
     }
 }
