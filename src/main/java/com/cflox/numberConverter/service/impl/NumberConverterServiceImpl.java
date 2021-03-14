@@ -7,6 +7,7 @@ import com.cflox.numberConverter.domain.dto.NumberConverterRequestDto;
 import com.cflox.numberConverter.exception.NumberOutOfRangeException;
 import com.cflox.numberConverter.service.INumberConverterService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -27,17 +28,7 @@ public class NumberConverterServiceImpl implements INumberConverterService {
         IIntegerConverter numberConverter = (IIntegerConverter) applicationContext.getBean(requestDto.getNumberType().getBeanName());
         int intValue = numberConverter.convert(requestDto.getNumber());
 
-        if (isInRange(intValue)) {
-            String romanValue = romanConverter.convert(intValue);
-            return new ApiResponse(romanValue, HttpStatus.OK, HttpStatus.OK.value());
-        } else {
-            throw new NumberOutOfRangeException(intValue);
-        }
+        return new ApiResponse(romanConverter.convert(intValue), HttpStatus.OK, HttpStatus.OK.value());
     }
 
-    private boolean isInRange(int value) {
-        if (value > 0 && value <= 3999)
-            return true;
-        return false;
-    }
 }

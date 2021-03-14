@@ -1,6 +1,7 @@
 package com.cflox.numberConverter.converter.impl;
 
 import com.cflox.numberConverter.converter.IIntegerConverter;
+import com.cflox.numberConverter.exception.InvalidInputException;
 import com.cflox.numberConverter.util.BeanNameUtil;
 import org.springframework.stereotype.Component;
 
@@ -13,10 +14,10 @@ public class DecimalToIntegerConverterImpl implements IIntegerConverter {
 
     @Override
     public int convert(String number) {
-        System.out.println("Converting Decimal...");
         try {
             return Integer.parseInt(number);
         } catch (NumberFormatException e) {
-            throw new NumberFormatException("Not a valid Decimal");
-        }    }
+            throw new InvalidInputException(String.format("%s is not a valid decimal, please do not use fraction.", number));
+        }
+    }
 }

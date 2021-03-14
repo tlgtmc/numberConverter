@@ -8,10 +8,9 @@ import java.util.TreeMap;
 
 public class RomanNumber {
 
-    private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
+    private final static TreeMap<Integer, String> map = new TreeMap<>();
 
     static {
-
         map.put(1000, "M");
         map.put(900, "CM");
         map.put(500, "D");
@@ -25,15 +24,13 @@ public class RomanNumber {
         map.put(5, "V");
         map.put(4, "IV");
         map.put(1, "I");
-
     }
 
-    public final static String toRoman(int number) {
+    public final static String from(int number) {
         int l =  map.floorKey(number);
         if ( number == l ) {
             return map.get(number);
         }
-        return map.get(l) + toRoman(number-l);
+        return map.get(l) + from(number-l);
     }
-
 }
