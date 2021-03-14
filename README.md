@@ -6,9 +6,9 @@ This application is converts the given value with input type to the requested ou
 
 ## Controller
 
-Currently, the application provides a GET method with the following endpoint:
+The application provides an endpoint to process the conversion:
 
-    localhost:7101/convert/to/roman
+    GET localhost:7101/convert/to/roman
 
 Request param dto:
 
@@ -22,6 +22,13 @@ Example URL:
 
     localhost:7101/convert/to/roman?number=10&inputNumberType=DECIMAL&outputNumberType=ROMAN
 
+Application is automatically sync with the UI. 
+ConfigController class provides supported input and output types to the UI.
+
+    GET localhost:7101/config/inputTypes
+    GET localhost:7101/config/outputTypes
+
+ 
 ## Supported Input & Output Types:
 
 **Input Type(s)**
