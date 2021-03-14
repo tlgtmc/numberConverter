@@ -11,7 +11,8 @@ import javax.validation.Valid;
  *
  * It has two fields
  * - number to be converted
- * - numberType type of the given number
+ * - inputNumberType type of the given number
+ * - outputNumberType type of requested output
  *
  * @author tatmaca
  */
